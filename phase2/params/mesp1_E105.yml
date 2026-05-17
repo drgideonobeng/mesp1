@@ -1,0 +1,8 @@
+# phase2/params/mesp1_E105.yml
+project_name:   "Mesp1_E105"
+
+clustered_rds:  "${projectDir}/../results/mesp1/e105/objects/06_seurat_clustered.rds"
+resultsdir:     "${projectDir}/../results/mesp1/e105"
+
+cluster_labels: "${projectDir}/../config/cluster_labels/e105.csv"
+marker_genes:   "Mesp1,Tbx5,Nkx2-5,Wt1,Tcf21,Isl1"

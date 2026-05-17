@@ -1,0 +1,11 @@
+# params/tbx1_E95.yml
+project_name:   "Tbx1_E95"
+
+barcodes_url:   "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM5169144&format=file&file=GSM5169144%5FTbx1%2Dwt%2DE95%5Fbarcodes%2Etsv%2Egz"
+features_url:   "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM5169144&format=file&file=GSM5169144%5FTbx1%2Dwt%2DE95%5Fgenes%2Etsv%2Egz"
+matrix_url:     "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM5169144&format=file&file=GSM5169144%5FTbx1%2Dwt%2DE95%5Fmatrix%2Emtx%2Egz"
+
+resultsdir:     "${projectDir}/../results/tbx1/e95"
+datadir:        "${projectDir}/../data/tbx1/e95"
+workDir:        "${projectDir}/../work/tbx1/e95"
+

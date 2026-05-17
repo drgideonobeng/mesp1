@@ -1,0 +1,79 @@
+# Compressed archives
+*.tar.gz
+*.tgz
+*.zip
+*.gz
+
+# Sequencing / Alignment / Variant / Raw Data
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.bam
+*.bam.bai
+*.sam
+*.cram
+*.vcf
+*.vcf.gz
+*.g.vcf.gz
+*.bcf
+*.sra
+
+# Reference Genomes & Indices
+*.fa
+*.fasta
+*.pac
+*.bwt
+*.sa
+*.amb
+*.ann
+*.clean
+*.bin
+SAindex
+SA
+Genome
+pos.bin
+
+# Single Cell / Expression Matrices
+*.mtx
+*.mtx.gz
+*.h5
+*.h5ad
+*.h5seurat
+
+# R / Environment Data
+*.rds
+*.RData
+*.rda
+
+# Massive Directories
+**/data/
+**/data_trimmed/
+**/data_*/
+**/*data/
+**/raw_data/
+**/raw/
+**/quants/
+**/ref/
+**/reference/
+**/known-sites/
+**/objects/
+
+# Ignore virtual environments
+**/.venv/
+venv/
+env/
+
+# Ignore heavy output/data
+**/results/
+**/data/
+*.gz
+
+# system files
+*.DS_Store
+scRNAseq/mesp1-tbx1/
+
+# Nextflow runtime artifacts
+.nextflow/
+.nextflow.log*
+work/

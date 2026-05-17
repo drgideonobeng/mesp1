@@ -1,0 +1,15 @@
+# params/mesp1_E825.yml
+project_name:   "Mesp1_E825"
+
+barcodes_url: "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM4816084&format=file&file=GSM4816084%5FMesp1%5FE825%5Fbarcodes%2Etsv%2Egz"
+features_url: "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM4816084&format=file&file=GSM4816084%5FMesp1%5FE825%5Fgenes%2Etsv%2Egz"
+matrix_url : "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM4816084&format=file&file=GSM4816084%5FMesp1%5FE825%5Fmatrix%2Emtx%2Egz"
+
+resultsdir:     "${projectDir}/../results/mesp1/e825"
+datadir:        "${projectDir}/../data/mesp1/e825"
+workDir:        "${projectDir}/../work/mesp1/e825"
+
+
+
+max_mt_percent: 5
+max_genes:      7000

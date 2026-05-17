@@ -1,0 +1,23 @@
+# =============================================================================
+# Parameter overlay for Mesp1 E10.5 dataset
+# Overrides defaults defined in nextflow.config
+# =============================================================================
+
+project_name:   "Mesp1_E105"
+
+# GEO accession URLs (replace with actual E10.5 URLs once you find them)
+barcodes_url: "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM4816086&format=file&file=GSM4816086%5FMesp1%5FE105%5Fbarcodes%2Etsv%2Egz"
+features_url: "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM4816086&format=file&file=GSM4816086%5FMesp1%5FE105%5Fgenes%2Etsv%2Egz"
+matrix_url: "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM4816086&format=file&file=GSM4816086%5FMesp1%5FE105%5Fmatrix%2Emtx%2Egz"
+
+# Separate output directories so E9.5 results aren't overwritten
+resultsdir:     "${projectDir}/../results/mesp1/e105"
+datadir:        "${projectDir}/../data/mesp1/e105"
+
+# Cluster labels file for E10.5 (create after first pass)
+
+# QC thresholds — start with E9.5 defaults, adjust after inspecting QC plots
+# Uncomment and modify as needed after first run:
+# max_genes:       6000
+# max_mt_percent:  3
+# cluster_res:     0.5
