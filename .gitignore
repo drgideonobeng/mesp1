@@ -71,9 +71,8 @@ env/
 
 # system files
 *.DS_Store
-scRNAseq/mesp1-tbx1/
-
 # Nextflow runtime artifacts
 .nextflow/
 .nextflow.log*
 work/
+**/work/
