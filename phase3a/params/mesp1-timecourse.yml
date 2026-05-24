@@ -1,0 +1,9 @@
+# phase3a/params/mesp1-timecourse.yml
+project_name: "Mesp1_Integrated"
+
+filtered_e80:  "${projectDir}/../results/mesp1/e80/objects/04_seurat_filtered.rds"
+filtered_e825: "${projectDir}/../results/mesp1/e825/objects/04_seurat_filtered.rds"
+filtered_e95:  "${projectDir}/../results/mesp1/e95/objects/04_seurat_filtered.rds"
+filtered_e105: "${projectDir}/../results/mesp1/e105/objects/04_seurat_filtered.rds"
+
+resultsdir: "${projectDir}/../results/integrated"
