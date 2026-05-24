@@ -308,6 +308,12 @@ RUN_CLUSTREE  ANNOTATE_ATLAS    (parallel)
 | 04   | RUN_CLUSTREE        | `04_clustree_resolutions.pdf`                       |
 | 05   | ANNOTATE_ATLAS      | `05_seurat_annotated.rds`, `05_umap_annotated.pdf`, `05_umap_timepoints.pdf`, `05_all_markers.csv`, `05_top_5_markers_per_celltype.csv` |
 
+#### Resolution selection
+
+![Clustree showing cluster stability across resolutions 0.2 to 1.2, with resolution 0.4 selected as the stable point before excessive sub-division](figures/clustree_resolutions.png)
+
+*Resolution 0.4 selected as the stable inflection point — sub-cluster splits below this resolution are stochastic, splits above introduce small unstable groups.*
+
 ---
 
 ## Integration QC Approach
@@ -531,6 +537,16 @@ appearing at E10.5.
 
 Phase 3a integration of 21,876 Mesp1-lineage cells across four timepoints (E8.0, E8.25, E9.5, E10.5) resolved 15 transcriptionally distinct populations at resolution 0.4. Labels were assigned by cross-referencing top marker genes from FindAllMarkers with published cardiopharyngeal lineage markers and validated against the Phase 2 per-timepoint Rosetta Stone annotations.
 
+### Atlas visualization
+
+![Annotated atlas of 21,876 Mesp1-lineage cells across four developmental timepoints, showing 15 transcriptionally distinct populations](figures/atlas_annotated_umap.png)
+
+*Integrated atlas: 21,876 cells, 15 annotated cell types. Resolution 0.4.*
+
+![UMAP faceted by developmental timepoint showing the temporal distribution of cell types from E8.0 to E10.5](figures/atlas_timepoints_umap.png)
+
+*Cell type distribution across timepoints. Early progenitor populations (clusters 0, 7, 10) dominate E8.0/E8.25; differentiated populations (cardiomyocytes, endothelium) emerge at E9.5/E10.5.*
+
 | Cluster | Cell type | Key markers | Timepoint pattern |
 |---|---|---|---|
 | 0 | Splanchnic / lateral plate mesoderm | Aldh1a2, Foxf1, Osr1, Meox1 | All timepoints — largest population |
@@ -596,29 +612,6 @@ lineage identities and merged back into the atlas as `atlas_clean`.
 Differential expression is relative to the comparison group — isolating candidate 
 artifact cells and re-clustering them independently is the correct diagnostic 
 before any exclusion decision.
-
----
-
-## Integrated Atlas Annotations
-
-> **Status: in progress** — Phase 3a integration is complete and quality-validated.
-> The 15-cluster `atlas_clean` object is the working atlas; cluster annotations 
-> are being finalized and will be documented here once complete.
->
-> Integration QC summary:
-> - Initial integration (k=20) produced one anomalous cluster with a barbell 
->   timepoint composition and no lineage markers — diagnosed as a fastMNN 
->   forced-correspondence artifact
-> - Re-integration (k=10) reproduced the same cluster; cells were extracted 
->   and re-clustered in isolation, recovering 11 real lineage sub-populations 
->   (primitive streak, AVE, posterior mesoderm, pharyngeal arch, cardiac neural 
->   crest — see [Integration artifact recovery](#integration-artifact-recovery-cluster-3))
-> - Final atlas: 15 developmentally coherent clusters (20,147 cells) plus 
->   ~1,600 recovered specification-stage cells pending reassignment
-> - Resolution 0.4 confirmed stable by clustree
->
-> `phase3a/cluster_labels_atlas.csv` will be populated and this section 
-> updated upon annotation completion.
 
 ---
 
