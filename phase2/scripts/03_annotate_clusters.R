@@ -75,12 +75,16 @@ if (length(unlabeled) > 0) {
 # 5. Apply Annotations
 # =============================================================================
 
-seurat_obj <- RenameIdents(seurat_obj, cluster_identities)
-seurat_obj$cell_type <- Idents(seurat_obj)
+if (length(cluster_identities) == 0) {
+    message("No labels in CSV — keeping numeric cluster IDs.")
+    seurat_obj$cell_type <- Idents(seurat_obj)
+} else {
+    seurat_obj <- RenameIdents(seurat_obj, cluster_identities)
+    seurat_obj$cell_type <- Idents(seurat_obj)
 
-# Sanity check: at least one cluster should have been renamed
-if (all(levels(seurat_obj) %in% data_clusters)) {
-    warning("No cluster identities were applied — check that cluster IDs in CSV match data clusters.")
+    if (all(levels(seurat_obj) %in% data_clusters)) {
+        warning("No cluster identities were applied — check that cluster IDs in CSV match data clusters.")
+    }
 }
 
 message("Cluster identities assigned:")
@@ -104,7 +108,7 @@ annotated_umap <- DimPlot(
 ) +
     labs(
         title    = glue("{project_name}: Annotated Cell Types"),
-        subtitle = glue("{ncol(seurat_obj)} cells | {length(cluster_identities)} populations")
+        subtitle = glue("{ncol(seurat_obj)} cells | {length(levels(seurat_obj))} clusters")
     ) +
     theme_minimal() +
     theme(legend.position = "right")
