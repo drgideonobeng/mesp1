@@ -1,0 +1,24 @@
+cluster_id,label
+0,Splanchnic / lateral plate mesoderm
+1,Pharyngeal arch mesenchyme
+2,Cardiopharyngeal / SHF progenitors
+3,Cardiac fibroblasts / mesenchyme
+4,Cardiomyocytes
+5,Transitional / Notch2+ progenitors
+6,Pharyngeal mesenchyme
+7,Posterior / paraxial mesoderm
+8,Endothelial cells
+9,Primitive erythrocytes
+10,Posterior mesoderm / primitive streak
+11,Hematopoietic / myeloid progenitors
+12,Proepicardium / epicardial progenitors
+13,Arterial endothelial progenitors
+14,Neural crest
+cl3_sub_0,Cycling cells
+cl3_sub_1,SHF / cardiopharyngeal progenitors
+cl3_sub_2,Smooth muscle progenitors
+cl3_sub_3,Neural-adjacent pharyngeal progenitors
+cl3_sub_4,Cardiac progenitors
+cl3_sub_5,Cardiac fibroblasts
+cl3_sub_6,Cardiac conduction / cranial mesoderm
+cl3_sub_7,Splanchnic mesoderm / SHF progenitors

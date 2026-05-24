@@ -527,26 +527,31 @@ dominated by specification-stage populations; E9.5/E10.5 resolve committed
 and mature lineages including mature cardiomyocytes and epicardium first 
 appearing at E10.5.
 
-### Integrated Atlas (Phase 3a)
+## Integrated Atlas Annotations
 
-Populate `phase3a/cluster_labels_atlas.csv` after reviewing the Phase 3a UMAP and markers:
+Phase 3a integration of 21,876 Mesp1-lineage cells across four timepoints (E8.0, E8.25, E9.5, E10.5) resolved 15 transcriptionally distinct populations at resolution 0.4. Labels were assigned by cross-referencing top marker genes from FindAllMarkers with published cardiopharyngeal lineage markers and validated against the Phase 2 per-timepoint Rosetta Stone annotations.
 
-```csv
-cluster_id,label
-0,
-1,
-...
-10,
-```
+| Cluster | Cell type | Key markers | Timepoint pattern |
+|---|---|---|---|
+| 0 | Splanchnic / lateral plate mesoderm | Aldh1a2, Foxf1, Osr1, Meox1 | All timepoints — largest population |
+| 1 | Pharyngeal arch mesenchyme | Alx3, Mab21l2, Hoxc4, Epha3 | All timepoints |
+| 2 | Cardiopharyngeal / SHF progenitors | Cbr3, Otx2, Fst, Zic2 | All timepoints |
+| 3 | Cardiac fibroblasts / mesenchyme | Col3a1, Nr2f1, Cxcl12, Vcam1 | All timepoints |
+| 4 | Cardiomyocytes | Myh6, Myh7, Myl3, Ttn | E9.5 / E10.5 dominant |
+| 5 | Transitional / Notch2+ progenitors | Notch2, Rpgrip1, Hsf2 | All timepoints |
+| 6 | Pharyngeal mesenchyme | Lhx2, Vgll3, Lrrn1, Rxrg | All timepoints |
+| 7 | Posterior / paraxial mesoderm | Hoxa9, Hoxa10, Hoxa11, Hoxc10 | E8.0 dominant |
+| 8 | Endothelial cells | Cldn5, Kcne3, Mfng, Samsn1 | E10.5 dominant |
+| 9 | Primitive erythrocytes | Hbb-y, Hemgn, Mt2 | E8.0 / E8.25 dominant |
+| 10 | Posterior mesoderm / primitive streak | Cdx1, Cdx4, Lhx1, Hoxb5os | E8.0 / E8.25 dominant |
+| 11 | Hematopoietic / myeloid progenitors | Rac2, Fermt3, F10, Gja6 | E10.5 dominant |
+| 12 | Proepicardium / epicardial progenitors | Upk1b, Upk3b, Tdo2 | E8.25 peak |
+| 13 | Arterial endothelial progenitors | Bmx, Adgrg6, Klf2, Tm4sf1 | E8.0 / E8.25 dominant |
+| 14 | Neural crest | Sox10, Foxd3, Tfap2b, Tfap2a, Lbx1 | E9.5 / E10.5 |
 
-> **Status:** Labels are currently empty (pending — see [GIDEON_FILL_ATLAS_ANNOTATIONS](#gideon_fill_atlas_annotations)).
-
-Then resume Phase 3a — only `ANNOTATE_ATLAS` will re-run:
-
-```bash
-nextflow run phase3a/main.nf -profile conda,apple_silicon \
-    -params-file phase3a/params/mesp1-timecourse.yml -resume
-```
+**Notes:**
+- Cluster 3 (Cardiac fibroblasts / mesenchyme) represents 1,997 cells recovered from a fastMNN forced-correspondence artifact. Isolation-based re-clustering confirmed 8 biologically coherent sub-populations whose identities map onto the 15 atlas labels above. See [Integration artifact recovery](#integration-artifact-recovery-cluster-3).
+- Cluster 13 (Arterial endothelial progenitors) is E8.0/E8.25 dominant with Bmx and Klf2 as top markers. The early timing suggests these may represent lateral plate / early vascular progenitors rather than fully specified arterial endothelium — this label should be treated as a working hypothesis pending validation.
 
 ---
 
